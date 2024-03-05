@@ -1,0 +1,56 @@
+
+# Pool controller
+ND-controller-NAME = Pool Controller
+ND-controller-ICON = Irrigation
+ST-ctl-ST-NAME = NodeServer Online
+CMD-ctl-QUERY-NAME = Query
+CMD-ctl-UPDATE_PROFILE-NAME = Update Profile
+CMD-TMP-SET_TEMP-NAME = Setpoint
+
+
+# Pool Body
+ND-poolnode-NAME = Body Pool
+ND-poolnode-ICON = Irrigation	
+ST-bodypool-ST-NAME = Node Status
+ST-bodypool-GV0-NAME = Pool Running
+ST-bodypool-GV1-NAME = Air Temperature
+ST-bodypool-GV8-NAME = Filter PSI
+ST-bodypool-GV30-NAME = -
+ST-bodypool-GV2-NAME = Setpoint
+ST-bodypool-GV3-NAME = Pool Temp
+
+ST-bodypool-GV4-NAME = Pump Status
+#ST-bodypool-GV5-NAME = Pump Watts
+#ST-bodypool-GV6-NAME = Pump RPM
+#ST-bodypool-GV7-NAME = Pump GPM
+CMD-bodypool-QUERY-NAME = Query
+CMD-bodypool-SET_TEMP-NAME = Heat Setpoint
+#CMD-bodypool-SET_SPEED-NAME = Pump RPM
+
+# Circuit Nodes
+ND-switchnodeid-NAME = Circuits
+ND-switchnodeid-ICON = Irrigation
+ST-switch0-ST-NAME = Node Status
+ST-switch0-GV1-NAME = Device Command
+CMD-switch0-QUERY-NAME = Query
+
+
+# Pump Node
+ND-pumpnode-NAME = Pump
+ND-pumpnode-ICON = Irrigation	
+ST-pumppool-ST-NAME = Node Status
+ST-pumppool-GV0-NAME = Pool Running
+ST-pumppool-GV30-NAME = -
+ST-pumppool-GV1-NAME = Pump Status
+ST-pumppool-GV2-NAME = Pump Watts
+ST-pumppool-GV3-NAME = Pump RPM
+ST-pumppool-GV4-NAME = Pump GPM
+CMD-pumppool-QUERY-NAME = Query
+CMD-pumppool-SET_SPEED-NAME = Pump RPM
+
+RUNIN-0 = Stopped
+RUNIN-1 = Running
+
+ONLINE-0 = Failed
+ONLINE-1 = Online
+

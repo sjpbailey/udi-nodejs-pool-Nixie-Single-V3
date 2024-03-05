@@ -1,0 +1,51 @@
+<editors>
+  <!-- Boolean -->
+  <editor id="bool">
+    <range uom="2" subset="0,1" />
+  </editor>
+
+  <editor id="ONLINE">
+    <range uom="25" subset="0,1" nls="ONLINE" />
+  </editor>
+
+  <editor id="RUNIN">
+    <range uom="25" subset="0,1" nls="RUNIN" />
+  </editor>
+
+  <editor id="I_DEBUG">
+    <range uom="25" subset="9,10,20,30,40,50" nls="CDM"/>
+  </editor>
+
+  <editor id="TEMP">
+    <range uom="17" min="-100000" max="100000" step="1" prec="1"/>
+  </editor>
+
+  <editor id="RPM">
+    <range uom="89" min="0" max="4000" step="1" prec="1"/>
+  </editor>
+
+  <editor id="GPM">
+    <range uom="69" min="0" max="100000" step="1" prec="1"/>
+  </editor>
+
+  <editor id="WATT">
+    <range uom="73" min="-100000" max="100000" step="1" prec="1"/>
+  </editor>
+
+  <editor id="PSI">
+    <range uom="52" min="-100000" max="100000" step="1" prec="1"/>
+  </editor>
+
+  <editor id="STATUS">
+    <range uom="80" subset="0,1" />
+  </editor>
+
+  <editor id="CTL_TEMP">
+    <range uom="17" min="40" max="104" step="1" prec="0" />
+  </editor>
+
+  <editor id="CTL_RPM">
+    <range uom="89" min="0" max="4000" step="1" prec="0" />
+  </editor>
+
+</editors>

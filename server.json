@@ -1,0 +1,37 @@
+{
+	"name": "NodejsPool",
+	"docs": "https://github.com/sjpbailey/udi-nodejs-pool-controller-V3/blob/main/README.md",
+	"type": "python3",
+	"executable": "nodejs-pool.py",
+	"install": "install.sh",
+	"description": "Tuya Lights and switches by TreatLife",
+	"notice": "Integrate NodeJS Pool Controller application to communicate and control your Pentair compatible pool equipment.",
+	"shortPoll": "25",
+	"longPoll": "600",
+	"testMode": false,
+	"logLevel": "INFO",
+	"profile_version": "1.0.0",
+	"customParams": {
+		"api_url": "http://192.168.1.53:4200",
+        "circuits": "0"
+	},
+	"credits": [
+		{
+			"title": "udi-nodejs-pool-controller-V3",
+			"author": "Steve Bailey (sjpbailey)",
+			"version": "1.0.0",
+			"date": "February 14, 2024",
+			"source": "https://github.com/sjpbailey/udi-nodejs-pool-controller-V3",
+			"license": "https://github.com/sjpbailey/udi-nodejs-pool-controller-V3/blob/main/LICENSE"
+		}
+	],
+	"store": {
+		"developer": "sjpbailey1961@gmail.com",
+		"purchaseOptions": [
+			{
+				"isPerpetual": true,
+				"price": 0
+			}
+		]
+	}
+}

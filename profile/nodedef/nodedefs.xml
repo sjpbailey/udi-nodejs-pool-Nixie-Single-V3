@@ -1,0 +1,98 @@
+<nodeDefs>
+    <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
+    <!-- controller, this must mach the id in your Controller class-->
+    <nodeDef id="controller" nls="ctl">
+        <editors />
+        <sts>
+            <st id="ST" editor="ONLINE" />
+        </sts>
+        <cmds>
+            <sends>
+                <!-- These are for our heartbeat -->
+                <cmd id="DON" />
+                <cmd id="DOF" />
+            </sends>
+            <accepts>
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- bodydeid -->
+    <nodeDef id="poolnode" nls="bodypool">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="TEMP" />
+            <st id="GV3" editor="TEMP" />
+            <st id="GV2" editor="TEMP" />
+            <st id="GV8" editor="PSI" />
+            <st id="GV30" editor="STATUS" />
+            <!--st id="GV4" editor="bool" />
+            <st id="GV5" editor="WATT" />
+            <st id="GV6" editor="RPM" />
+            <st id="GV7" editor="GPM" /-->
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_TEMP">
+                    <p id="" editor="CTL_TEMP" init="CLISPH" />
+                </cmd>
+                <!--cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RPM" init="SPDSPH" />
+                </cmd-->
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- switchnodeid -->
+    <nodeDef id="switchnodeid" nls="switch0">
+        <editors />
+        <sts>
+            <st id="ST" editor="ONLINE" />
+            <st id="GV1" editor="RUNIN" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid -->
+    <nodeDef id="pumpnode" nls="pumppool">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RPM" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+</nodeDefs>
