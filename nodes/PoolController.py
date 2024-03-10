@@ -1,14 +1,20 @@
-
+'''copyright© 2024 SJBailey©'''
 import udi_interface
 import requests
 import logging
 import json
 
 # My Template Node
-from nodes import TemplateNode
 from nodes import PoolNode
 from nodes import SwitchNode
 from nodes import PumpNode
+from nodes import PumpIVSNode
+from nodes import PumpIVFNode
+from nodes import PumpISVSNode
+from nodes import Pump2SPDNode
+from nodes import Pump1SPDNode
+from nodes import PumpTriStarNode
+from nodes import PumpHSVSNode
 
 
 LOGGER = udi_interface.LOGGER
@@ -120,12 +126,42 @@ class PoolController(udi_interface.Node):
             LOGGER.info(i["address"])
             LOGGER.info(i["type"]['desc'])
             address = 'pump_{}'.format(address)
+            LOGGER.info("ID:  {}".format(i["id"]))
+            pid = i["id"]
             if i["type"]['desc'] == "Intelliflo VSF":
                 LOGGER.info("Install Intelliflo VSF")
                 self.poly.addNode(PumpNode(
-                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url))
-        else:
-            LOGGER.info("Pump Not Found")
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Intelliflo VS":
+                LOGGER.info("Install Intelliflo VS")
+                self.poly.addNode(PumpIVSNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Intelliflo VF":
+                LOGGER.info("Install Intelliflo VF")
+                self.poly.addNode(PumpIVFNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "SuperFlo VS":
+                LOGGER.info("Install SuperFlo VS")
+                self.poly.addNode(PumpISVSNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Two Speed":
+                LOGGER.info("Install Two Speed")
+                self.poly.addNode(Pump2SPDNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Single Speed":
+                LOGGER.info("Install Single Speed")
+                self.poly.addNode(Pump1SPDNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Hayward Eco/TriStar VS":
+                LOGGER.info("Install Hayward Eco/TriStar VS")
+                self.poly.addNode(PumpTriStarNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            elif i["type"]['desc'] == "Hayward Relay VS":
+                LOGGER.info("Install Hayward Relay VS")
+                self.poly.addNode(PumpHSVSNode(
+                    self.poly, self.address, address, name, allData, self.apiBaseUrl, self.api_url, pid))
+            else:
+                LOGGER.info("Pump Not Found")
 
         for i in self.allDataJson["heaters"]:
             LOGGER.info(i['name'])

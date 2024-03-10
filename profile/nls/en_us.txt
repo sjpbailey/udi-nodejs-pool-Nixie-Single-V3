@@ -35,8 +35,8 @@ ST-switch0-GV1-NAME = Device Command
 CMD-switch0-QUERY-NAME = Query
 
 
-# Pump Node
-ND-pumpnode-NAME = Pump
+# Pump Node Intelliflo VSF
+ND-pumpnode-NAME = Pump VSF
 ND-pumpnode-ICON = Irrigation	
 ST-pumppool-ST-NAME = Node Status
 ST-pumppool-GV0-NAME = Pool Running
@@ -45,8 +45,115 @@ ST-pumppool-GV1-NAME = Pump Status
 ST-pumppool-GV2-NAME = Pump Watts
 ST-pumppool-GV3-NAME = Pump RPM
 ST-pumppool-GV4-NAME = Pump GPM
+CMD-pumppool-DON-NAME = ON
+CMD-pumppool-DOF-NAME = OFF
 CMD-pumppool-QUERY-NAME = Query
 CMD-pumppool-SET_SPEED-NAME = Pump RPM
+
+# Pump Node Hayward ECO/TriStar
+ND-pumptris-NAME = Pump ECO/TriStar
+ND-pumptris-ICON = Irrigation	
+ST-pumptrip-ST-NAME = Node Status
+ST-pumptrip-GV0-NAME = Pool Running
+ST-pumptrip-GV30-NAME = -
+ST-pumptrip-GV1-NAME = Pump Status
+ST-pumptrip-GV2-NAME = Pump Watts
+ST-pumptrip-GV3-NAME = Pump RPM
+ST-pumptrip-GV4-NAME = Pump GPM
+CMD-pumptrip-DON-NAME = ON
+CMD-pumptrip-DOF-NAME = OFF
+CMD-pumptrip-QUERY-NAME = Query
+CMD-pumptrip-SET_SPEED-NAME = Pump RPM
+
+# Pump Node Intelliflo VS
+ND-pumpIvs-NAME = Pump VS
+ND-pumpIvs-ICON = Irrigation	
+ST-pumpIvsP-ST-NAME = Node Status
+ST-pumpIvsP-GV0-NAME = Pool Running
+ST-pumpIvsP-GV30-NAME = -
+ST-pumpIvsP-GV1-NAME = Pump Status
+ST-pumpIvsP-GV2-NAME = Pump Watts
+ST-pumpIvsP-GV3-NAME = Pump RPM
+ST-pumpIvsP-GV4-NAME = Pump GPM
+CMD-pumpIvsP-DON-NAME = ON
+CMD-pumpIvsP-DOF-NAME = OFF
+CMD-pumpIvsP-QUERY-NAME = Query
+CMD-pumpIvsP-SET_SPEED-NAME = Pump RPM
+
+# Pump Node Intelliflo VF
+ND-pumpIvf-NAME = Pump VF
+ND-pumpIvf-ICON = Irrigation	
+ST-pumpIvfP-ST-NAME = Node Status
+ST-pumpIvfP-GV0-NAME = Pool Running
+ST-pumpIvfP-GV30-NAME = -
+ST-pumpIvfP-GV1-NAME = Pump Status
+ST-pumpIvfP-GV2-NAME = Pump Watts
+ST-pumpIvfP-GV3-NAME = Pump RPM
+ST-pumpIvfP-GV4-NAME = Pump GPM
+CMD-pumpIvfP-DON-NAME = ON
+CMD-pumpIvfP-DOF-NAME = OFF
+CMD-pumpIvfP-QUERY-NAME = Query
+CMD-pumpIvfP-SET_SPEED-NAME = Pump GPM
+
+# Pump Node Intelliflo SuperFlow VS
+ND-pumpIsvs-NAME = Pump VF
+ND-pumpIsvs-ICON = Irrigation	
+ST-pumpIsvsP-ST-NAME = Node Status
+ST-pumpIsvsP-GV0-NAME = Pool Running
+ST-pumpIsvsP-GV30-NAME = -
+ST-pumpIsvsP-GV1-NAME = Pump Status
+ST-pumpIsvsP-GV2-NAME = Pump Watts
+ST-pumpIsvsP-GV3-NAME = Pump RPM
+ST-pumpIsvsP-GV4-NAME = Pump GPM
+CMD-pumpIsvsP-DON-NAME = ON
+CMD-pumpIsvsP-DOF-NAME = OFF
+CMD-pumpIsvsP-QUERY-NAME = Query
+CMD-pumpIsvsP-SET_SPEED-NAME = Pump Relays
+
+# Pump Node Two Speed Pump Low and High
+ND-pump2spd-NAME = Pump VF
+ND-pump2spd-ICON = Irrigation	
+ST-pump2spdP-ST-NAME = Node Status
+ST-pump2spdP-GV0-NAME = Pool Running
+ST-pump2spdP-GV30-NAME = -
+ST-pump2spdP-GV1-NAME = Pump Status
+ST-pump2spdP-GV2-NAME = Pump Watts
+ST-pump2spdP-GV3-NAME = Pump RPM
+ST-pump2spdP-GV4-NAME = Pump GPM
+CMD-pump2spdP-DON-NAME = ON
+CMD-pump2spdP-DOF-NAME = OFF
+CMD-pump2spdP-QUERY-NAME = Query
+CMD-pump2spdP-SET_SPEED-NAME = Pump Relays
+
+# Pump Node Single Speed Pump
+ND-pump1spd-NAME = Pump VF
+ND-pump1spd-ICON = Irrigation	
+ST-pump1spdP-ST-NAME = Node Status
+ST-pump1spdP-GV0-NAME = Pool Running
+ST-pump1spdP-GV30-NAME = -
+ST-pump1spdP-GV1-NAME = Pump Status
+ST-pump1spdP-GV2-NAME = Pump Watts
+ST-pump1spdP-GV3-NAME = Pump RPM
+ST-pump1spdP-GV4-NAME = Pump GPM
+CMD-pump1spdP-DON-NAME = ON
+CMD-pump1spdP-DOF-NAME = OFF
+CMD-pump1spdP-QUERY-NAME = Query
+#CMD-pump1spdP-SET_SPEED-NAME = Pump Relays
+
+# Pump Node Hayward Relay VS
+ND-pumpHsvs-NAME = Pump VF
+ND-pumpHsvs-ICON = Irrigation	
+ST-pumpHsvsP-ST-NAME = Node Status
+ST-pumpHsvsP-GV0-NAME = Pool Running
+ST-pumpHsvsP-GV30-NAME = -
+ST-pumpHsvsP-GV1-NAME = Pump Status
+ST-pumpHsvsP-GV2-NAME = Pump Watts
+ST-pumpHsvsP-GV3-NAME = Pump RPM
+ST-pumpHsvsP-GV4-NAME = Pump GPM
+CMD-pumpHsvsP-DON-NAME = ON
+CMD-pumpHsvsP-DOF-NAME = OFF
+CMD-pumpHsvsP-QUERY-NAME = Query
+CMD-pumpHsvsP-SET_SPEED-NAME = Pump Relays
 
 RUNIN-0 = Stopped
 RUNIN-1 = Running
@@ -54,3 +161,16 @@ RUNIN-1 = Running
 ONLINE-0 = Failed
 ONLINE-1 = Online
 
+RELAY4-1 = RELAY 1
+RELAY4-2 = RELAY 2
+RELAY4-3 = RELAY 3
+RELAY4-4 = RELAY 4
+
+RELAY2-0 = Off
+RELAY2-1 = Low
+RELAY2-2 = High
+
+RELAYH-1 = PROGRAM 1
+RELAYH-2 = PROGRAM 2
+RELAYH-3 = PROGRAM 3
+RELAYH-4 = PROGRAM 4

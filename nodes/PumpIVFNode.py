@@ -1,4 +1,4 @@
-''' Intelliflo VSF Pump 
+''' Intelliflo VF Pump 
     copyright© 2024 SJBailey© '''
 import udi_interface
 import sys
@@ -9,11 +9,11 @@ import urllib3
 LOGGER = udi_interface.LOGGER
 
 
-class PumpNode(udi_interface.Node):
+class PumpIVFNode(udi_interface.Node):
 
     def __init__(self, polyglot, primary, address, name, allData, apiBaseUrl, api_url, pid):
 
-        super(PumpNode, self).__init__(polyglot, primary, address, name)
+        super(PumpIVFNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)
 
@@ -26,6 +26,7 @@ class PumpNode(udi_interface.Node):
         self.pid = pid
 
     def start(self):
+
         self.allData = requests.get(
             url='{}/state/all'.format(self.apiBaseUrl))
 
@@ -55,17 +56,24 @@ class PumpNode(udi_interface.Node):
         if pisOn == False:
             self.setDriver('GV1', 0)
 
-        LOGGER.info("Pump Watts  {}".format(
-            self.allDataJson["pumps"][0]["watts"]))
-        self.setDriver('GV2', self.allDataJson["pumps"][0]["watts"])
+        try:
+            LOGGER.info("Pump Watts  {}".format(
+                self.allDataJson["pumps"][0]["watts"]))
+            self.setDriver('GV2', self.allDataJson["pumps"][0]["watts"])
+        except KeyError:
+            pass
 
         LOGGER.info("Pump RPM  {}".format(
             self.allDataJson["pumps"][0]["rpm"]))
-        self.setDriver('GV3', self.allDataJson["pumps"][0]["rpm"])
+        self.setDriver(
+            'GV3', self.allDataJson["pumps"][0]["circuits"][0]['units']['val'])
 
-        LOGGER.info("Pump GPM  {}".format(
-            self.allDataJson["pumps"][0]["flow"]))
-        self.setDriver('GV4', self.allDataJson["pumps"][0]["flow"])
+        try:
+            LOGGER.info("Pump GPM  {}".format(
+                self.allDataJson["pumps"][0]["flow"]))
+            self.setDriver('GV4', self.allDataJson["pumps"][0]["flow"])
+        except KeyError:
+            pass
         self.http = urllib3.PoolManager()
 
     def poll(self, polltype):
@@ -96,7 +104,7 @@ class PumpNode(udi_interface.Node):
     def cmd_set_sped(self, command):
         value = int(command.get('value'))
         json_data = {"id": self.pid, "circuits": [
-            {"speed": value, "units": {"val": 0}, "id": 1, "circuit": 6}]}
+            {"flow": value, "units": {"val": 1}, "id": 1, "circuit": 6}]}
 
         response = requests.put(
             self.api_url + '/config/pump', json=json_data)
@@ -107,11 +115,11 @@ class PumpNode(udi_interface.Node):
         {'driver': 'GV2', 'value': None, 'uom': 73, 'name': "Pump Watts"},
         {'driver': 'GV3', 'value': None, 'uom': 89, 'name': "Pump RPM"},
         {'driver': 'GV4', 'value': None, 'uom': 69, 'name': "Pump GPM"},
-        {'driver': 'SPDSPH', 'value': 0, 'uom': 89, 'name': "Setpoint adj"},
+        {'driver': 'SPDSPH', 'value': 0, 'uom': 89, 'name': "GPM Setpoint adj"},
         {'driver': 'ST', 'value': 0, 'uom': 25, 'name': "Online"},
     ]
 
-    id = 'pumpnode'
+    id = 'pumpIvf'
 
     commands = {
         'DON': cmd_on,

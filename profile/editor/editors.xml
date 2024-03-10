@@ -48,4 +48,21 @@
     <range uom="89" min="0" max="4000" step="1" prec="0" />
   </editor>
 
+  <editor id="CTL_GPM">
+    <range uom="69" min="0" max="300" step="1" prec="0" />
+  </editor>
+
+  <editor id = "CTL_RLY4">
+    <range uom="25" subset="1-4" nls="RELAY4" />
+  </editor>
+
+  <editor id = "CTL_RLYH">
+    <range uom="25" subset="1-4" nls="RELAYH" />
+  </editor>
+
+
+  <editor id = "CTL_RLY2">
+    <range uom="25" subset="0-2" nls="RELAY2" />
+  </editor>
+
 </editors>

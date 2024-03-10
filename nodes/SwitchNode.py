@@ -1,4 +1,5 @@
-
+''' Circuit Nodejs Pool
+    copyright© 2024 SJBailey© '''
 import udi_interface
 import json
 import requests

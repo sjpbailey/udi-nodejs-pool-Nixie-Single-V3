@@ -68,7 +68,7 @@
         </cmds>
     </nodeDef>
 
-    <!-- pumpid -->
+    <!-- pumpid VSF-->
     <nodeDef id="pumpnode" nls="pumppool">
         <editors />
         <sts>
@@ -87,9 +87,190 @@
                 <cmd id="DON" />
                 <cmd id="DOF" />
                 <cmd id="QUERY" />
-
                 <cmd id="SET_SPEED">
                     <p id="" editor="CTL_RPM" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- Hayward TriStar Pump -->
+    <nodeDef id="pumptris" nls="pumptrip">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RPM" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid VS-->
+    <nodeDef id="pumpIvs" nls="pumpIvsP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RPM" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid VF-->
+    <nodeDef id="pumpIvf" nls="pumpIvfP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_GPM" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid SVS-->
+    <nodeDef id="pumpIsvs" nls="pumpIsvsP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RLY4" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid Two Speed-->
+    <nodeDef id="pump2spd" nls="pump2spdP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RLY2" init="SPDSPH" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid Single Speed-->
+    <nodeDef id="pump1spd" nls="pump1spdP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <!--cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RLY2" init="SPDSPH" />
+                </cmd-->
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+    <!-- pumpid Hayward VS-->
+    <nodeDef id="pumpHsvs" nls="pumpHsvsP">
+        <editors />
+        <sts>
+            <st id="GV0" editor="RUNIN" />
+            <st id="GV1" editor="RUNIN" />
+            <st id="GV2" editor="WATT" />
+            <st id="GV3" editor="RPM" />
+            <st id="GV4" editor="GPM" />
+            <st id="GV30" editor="STATUS" />
+            <st id="ST" editor="ONLINE" />
+
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />
+                <cmd id="SET_SPEED">
+                    <p id="" editor="CTL_RLYH" init="SPDSPH" />
                 </cmd>
             </accepts>
         </cmds>

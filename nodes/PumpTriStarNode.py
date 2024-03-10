@@ -1,4 +1,4 @@
-''' Intelliflo VSF Pump 
+''' Hayward TriStar Pump 
     copyright© 2024 SJBailey© '''
 import udi_interface
 import sys
@@ -9,11 +9,11 @@ import urllib3
 LOGGER = udi_interface.LOGGER
 
 
-class PumpNode(udi_interface.Node):
+class PumpTriStarNode(udi_interface.Node):
 
     def __init__(self, polyglot, primary, address, name, allData, apiBaseUrl, api_url, pid):
 
-        super(PumpNode, self).__init__(polyglot, primary, address, name)
+        super(PumpTriStarNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)
 
@@ -111,7 +111,7 @@ class PumpNode(udi_interface.Node):
         {'driver': 'ST', 'value': 0, 'uom': 25, 'name': "Online"},
     ]
 
-    id = 'pumpnode'
+    id = 'pumptris'
 
     commands = {
         'DON': cmd_on,
